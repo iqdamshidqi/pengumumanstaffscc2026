@@ -1,6 +1,6 @@
 {
-  "short_name": "HIMASTA",
-  "name": "Pengumuman Staff HIMASTA ITS 2026",
+  "short_name": "SCC",
+  "name": "Pengumuman Staff SCC 2026",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logohimpunan.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logohimpunan.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

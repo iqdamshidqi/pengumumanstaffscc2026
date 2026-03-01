@@ -1,12 +1,25 @@
 from fastapi import FastAPI, HTTPException
-import pandas as pd
+from fastapi.middleware.cors import CORSMiddleware
+import json
 import os
 
 app = FastAPI()
 
-# Path absolut agar Vercel tidak bingung mencari file
+# Tambahkan CORS Middleware agar frontend bisa request ke backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Bisa diganti ke origin spesifik untuk lebih aman di production
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-EXCEL_PATH = os.path.join(BASE_DIR, "Lolos Staff.xlsx")
+JSON_PATH = os.path.join(BASE_DIR, "data_lolos.json")
+
+# Memuat data ke memori saat server mulai, ini jauh lebih cepat daripada baca file setiap request
+with open(JSON_PATH, "r") as f:
+    data_staff = json.load(f)
 
 @app.get("/api")
 async def cek_penerimaan(nrp: str = None):
@@ -14,16 +27,13 @@ async def cek_penerimaan(nrp: str = None):
         return {"error": "NRP tidak boleh kosong"}
     
     try:
-        # Membaca file excel
-        df = pd.read_excel(EXCEL_PATH)
+        # Cari data berdasarkan NRP
+        result = next((item for item in data_staff if str(item.get("nrp")) == str(nrp)), None)
         
-        # Cari data berdasarkan kolom 'NRP' (pastikan di Excel kolomnya bernama 'NRP')
-        result = df[df['id'].astype(str) == str(nrp)]
-        
-        if not result.empty:
-            row = result.iloc[0]
+        if result:
             return {
-                "nama": str(row['nama']), # Pastikan kolom 'Nama' ada di Excel
+                "nama": result.get("nama"),
+                "posisi": result.get("posisi"),
                 "lolos": True,
                 "nrp": str(nrp)
             }
