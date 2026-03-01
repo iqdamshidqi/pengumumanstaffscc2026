@@ -124,13 +124,14 @@
 
 {/* Seksie Pengumuman BUBAR */}
 <div className="bubar-announcement" style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-    <h4 style={{ color: '#FFFFFF', marginBottom: '8px', fontSize: '1.1rem' }}>AGENDA SELANJUTNYA: SCC BUBAR</h4>
+    <h4 style={{ color: '#FFFFFF', marginBottom: '8px', fontSize: '1.1rem' }}>AGENDA SELANJUTNYA: SCC BUBAR 😱</h4>
     <p style={{ fontSize: '14px', marginBottom: '10px', color: '#E0E0E0' }}>
-        Gak perlu nunggu lama buat kenalan! Yuk hadir di acara <strong style={{ color: '#FFFFFF' }}>Buka Bersama SCC</strong>:
+        Gak perlu nunggu lama buat kenalan! Yuk hadir di acara <strong style={{ color: '#FFFFFF' }}>Buka Bareng SCC</strong>:
     </p>
     <ul style={{ textAlign: 'left', fontSize: '14px', listStyleType: 'none', padding: 0 }}>
         <li>📍 <strong>Lokasi:</strong> <a href="https://maps.app.goo.gl/RHyptX2ErPqvgGdX8" target="_blank" rel="noopener noreferrer">Uptown</a></li>
         <li>⏰ <strong>Waktu:</strong> 14:30 WIB - Selesai</li>
+        <li>📅 <strong>tanggal:</strong> Minggu, 8 Maret 2026</li>
         <li>👕 <strong>Dress Code:</strong> {result.dress}</li>
     </ul>
 </div>
