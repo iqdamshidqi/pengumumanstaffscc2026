@@ -129,7 +129,7 @@
         Gak perlu nunggu lama buat kenalan! Yuk hadir di acara <strong style={{ color: '#FFFFFF' }}>Buka Bareng SCC</strong>:
     </p>
     <ul style={{ textAlign: 'left', fontSize: '14px', listStyleType: 'none', padding: 0 }}>
-        <li>📍 <strong>Lokasi:</strong> <a href="https://maps.app.goo.gl/RHyptX2ErPqvgGdX8" target="_blank" rel="noopener noreferrer">Uptown</a></li>
+        <li>📍 <strong>Lokasi:</strong> <a href="https://maps.app.goo.gl/RHyptX2ErPqvgGdX8" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }} >Uptown</a></li>
         <li>⏰ <strong>Waktu:</strong> 14:30 WIB - Selesai</li>
         <li>📅 <strong>tanggal:</strong> Minggu, 8 Maret 2026</li>
         <li>👕 <strong>Dress Code:</strong> {result.dress}</li>
